@@ -18,10 +18,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Include common vendor stuff
-$(call inherit-product, vendor/sony/sm8250-common/sm8250-common-vendor.mk)
+$(call inherit-product, vendor/sony/sm8150-common/sm8150-common-vendor.mk)
 
 # VNDK
-PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_SHIPPING_API_LEVEL := 28
 PRODUCT_USE_PRODUCT_VNDK_OVERRIDE := true
 
 # Additional native libraries
@@ -117,15 +117,14 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.soundtrigger@2.3-impl \
     tinyplay \
-    tinymix \
-    audio_amplifier.kona
+    tinymix 
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    audio.primary.kona \
+    audio.primary.msmnile \
     audio.r_submix.default \
     audio.usb.default \
-    sound_trigger.primary.kona
+    sound_trigger.primary.msmnile
 
 PRODUCT_PACKAGES += \
     liba2dpoffload \
@@ -201,7 +200,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 # Charger
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     vendor.semc.hardware.charger@1.0.vendor
 
 # Common init scripts
@@ -252,35 +251,30 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    gralloc.kona \
+    gralloc.msmnile \
     libdisplayconfig.qti \
     libdisplayconfig.system.qti \
     libqdMetaData \
     libqdMetaData.system \
     libsdmcore \
     libsdmutils \
-    memtrack.kona \
+    memtrack.msmnile \
     vendor.display.config@1.5 \
     vendor.display.config@1.11.vendor \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.mapper@1.0.vendor \
     vendor.qti.hardware.display.mapper@1.1.vendor \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
-    vendor.qti.hardware.display.mapper@4.0.vendor \
-    vendor.semc.hardware.display@2.2.vendor
+    vendor.qti.hardware.display.mapper@4.0.vendor 
+#   vendor.semc.hardware.display@2.2.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor \
     android.hardware.drm-service.clearkey
-
-# fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd
 
 # Fstab
 PRODUCT_COPY_FILES += \
@@ -378,10 +372,10 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.sony_edo
+    android.hardware.lights-service.sony_kumano
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.1-service.sony
 
 
@@ -407,7 +401,6 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    init.qti.media.sh \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -482,7 +475,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml
 
 # Touch
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.sony
 
 # Update engine
@@ -536,8 +529,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
 
 # XperiaParts
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     XperiaParts
-
-PRODUCT_BUILD_SUPER_PARTITION := false
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
