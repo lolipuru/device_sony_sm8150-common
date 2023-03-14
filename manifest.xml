@@ -275,12 +275,12 @@
     <hal format="hidl">
       <name>vendor.semc.hardware.secd</name>
       <transport>hwbinder</transport>
-      <fqname>@1.1::IDeviceSecurity/default</fqname>
+      <fqname>@1.0::IDeviceSecurity/default</fqname>
     </hal>
     <hal format="hidl">
       <name>vendor.somc.hardware.security.secd</name>
       <transport>hwbinder</transport>
-      <fqname>@1.1::IDeviceSecurity/default</fqname>
+      <fqname>@1.0::IDeviceSecurity/default</fqname>
     </hal>
     <hal format="hidl">
       <name>vendor.qti.hardware.iop</name>
@@ -456,6 +456,6 @@
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
         <transport>hwbinder</transport>
-        <fqname>@2.1::IComposer/default</fqname>
+        <fqname>@2.4::IComposer/default</fqname>
     </hal>
 </manifest>
